@@ -1,0 +1,15 @@
+user:
+  name: ishikki
+  github: ishikki-akabane
+
+language: "python"
+python_version: "3.10"
+
+commands:
+  build:
+    - "pip3 install --no-cache-dir -r requirements.txt"
+  start:
+    - "python main.py"
+
+env:
+  - "ENVIRONMENT=production"

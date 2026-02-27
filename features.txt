@@ -1,0 +1,46 @@
+<blockquote>✨ 𝐑𝐄𝐏𝐎𝐒𝐈𝐓𝐎𝐑𝐘 𝐀𝐍𝐀𝐋𝐘𝐒𝐈𝐒 & 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 𝐑𝐄𝐏𝐎𝐑𝐓 ✨</blockquote>
+<blockquote>🌟 𝐏𝐑𝐎𝐉𝐄𝐂𝐓 𝐎𝐕𝐄𝐑𝐕𝐈𝐄𝐖 🌟</blockquote>
+<blockquote>This repository hosts a sophisticated, high-load optimized Pyrogram Telegram Bot tailored for file sharing, link generation, and channel promotion (Force Subscribe) with advanced monetization hooks (Shorteners, Premium tiers). Currently, everything appears structurally sound and well-pipelined via asynchronous task queues and efficient Pyrogram command handling. 🚀</blockquote>
+
+<blockquote>🛠️ 𝐂𝐎𝐑𝐄 𝐅𝐔𝐍𝐂𝐓𝐈𝐎𝐍𝐀𝐋𝐈𝐓𝐈𝐄𝐒 🛠️</blockquote>
+
+<blockquote>𝟭. 𝗛𝗶𝗴𝗵𝗹𝗼𝗮𝗱 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻 ⚡</blockquote>
+<blockquote>• The bot employs \`uvloop\` and \`tgcrypto\` for drastically reduced latency.
+• Employs a \`GLOBAL_SEMAPHORE\` limits simultaneous \`/start\` executions to prevent server overloads.
+• Threads and background tasks handle file batching and auto-deletion without locking the event loop (\`start.py\`).
+• \`flood_safe()\` function seamlessly handles Telegram API FloodWaits automatically.</blockquote>
+
+<blockquote>𝟮. 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗙𝗼𝗿𝗰𝗲 𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻𝘀 (𝗙-𝗦𝘂𝗯) 🛡️</blockquote>
+<blockquote>• Managed comprehensively in \`command/fsub.py\`.
+• Supports both Normal F-Sub and Request-based F-Sub (R-Sub).
+• Admins can dynamically add or remove channels from the DB using interactive inline dialogs and \`client.listen()\` from \`pyromod\`.
+• Checks user presence in mandatory channels before delivering requested payloads.</blockquote>
+
+<blockquote>𝟯. 𝗠𝗼𝗻𝗲𝘁𝗶𝘇𝗮𝘁𝗶𝗼𝗻 & 𝗦𝗵𝗼𝗿𝘁𝗲𝗻𝗲𝗿𝘀 🔗</blockquote>
+<blockquote>• Admins can enforce Ad-Shorteners across two modes: "24-Hour Pass" or "Per Link" access (\`command/admin.py\`, \`plugins/start.py\`).
+• Fully integrated with Shortzy APIs (\`helper_func.py\`).
+• Includes bypassing privileges for Premium Users (\`pre.py\`).</blockquote>
+
+<blockquote>𝟰. 𝗔𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻 𝗣𝗮𝗻𝗲𝗹𝘀 👑</blockquote>
+<blockquote>• Handled in \`command/admin.py\` & \`plugins/new.py\`.
+• Powerful callback query systems to toggle configurations visually: \`website\` URLs, \`API\` keys, \`protect\` content toggle, \`hide\` captions, etc.
+• \`/users\` to count total users and \`/broadcast\` to send announcements globally efficiently.
+• \`/log\` to directly extract \`bot.txt\` without SSH.
+• \`/restart\` to hot-reload the bot instance.</blockquote>
+
+<blockquote>𝟱. 𝗙𝗶𝗹𝗲 𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 & 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 𝗖𝗹𝗲𝗮𝗻𝘂𝗽 🗑️</blockquote>
+<blockquote>• Extracts files from DB channels by Base64 decoding string identifiers (\`helper_func.py\`).
+• Includes customizable caption modification (\`/code\` to preview HTML formats).
+• Optionally configures auto-deletion of sent media after a set timer using asyncio background scheduling.</blockquote>
+
+<blockquote>💡 𝗔𝗥𝗖𝗛𝗜𝗧𝗘𝗖𝗧𝗨𝗥𝗘 𝗕𝗥𝗘𝗔𝗞𝗗𝗢𝗪𝗡 💡</blockquote>
+<blockquote>• \`bot.py\` : Instantiates Pyrogram Client sessions (bot + user options) & kicks off \`web_server\`.
+• \`config.py\` : Safely loads Env variables with DB fallbacks and establishes \`logging\`.
+• \`plugins/start.py\` : The core router. Where users hit the bot, get verified, and receive their requested files.
+• \`plugins/new.py\` : Entrypoint router for miscellaneous commands and the master callback query handler for inline buttons.
+• \`command/fsub.py\` : Logic center for adding/removing force-sub channels.
+• \`command/admin.py\` : Dialog logic for tweaking bot settings dynamically.
+• \`helper_func.py\` : Base64 manipulation, time formatting, Shortzy wrapper, and flood-wait hardened message fetchers.</blockquote>
+
+<blockquote>🔥 𝗖𝗢𝗡𝗖𝗟𝗨𝗦𝗜𝗢𝗡 🔥</blockquote>
+<blockquote>The bot is streamlined and heavily packed with inline button dialogs. The usage of \`pyromod\` for conversational UI is cleanly separated across files. Database state management is functional. Everything stands ready and correctly wired! 🎉</blockquote>
